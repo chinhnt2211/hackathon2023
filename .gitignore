@@ -1,3 +1,5 @@
 venv/*
 venv
 .idea
+services/__pycache__
+services/uploads/*
