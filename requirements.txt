@@ -5,6 +5,7 @@ certifi==2023.7.22
 click==8.1.6
 environs==9.5.0
 Flask==2.3.2
+Flask-Cors==4.0.0
 flask-restx==1.1.0
 greenlet==2.0.2
 itsdangerous==2.1.2
