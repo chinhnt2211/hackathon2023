@@ -43,14 +43,15 @@ class ProfilesApi(Resource):
 
             profiles = profiles.all()
 
-            data = {}
+            data = []
             if profiles:
                 for profile in profiles:
-                    data[str(profile.id)] = data_time_serialize(profile.serialize) if profile else profile
+                    each = data_time_serialize(profile.serialize) if profile else profile
                     steps = postgres_session.query(StepEntity).filter(
                         StepEntity.profile_id == profile.id
                     ).all()
-                    data[str(profile.id)]["steps"] = data_time_serialize([s.serialize for s in steps])
+                    each["steps"] = data_time_serialize([s.serialize for s in steps])
+                    data.append(each)
 
                 return make_response(jsonify({"data": data, "message": "Success"}), 200)
             else:

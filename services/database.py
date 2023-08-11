@@ -16,7 +16,7 @@ Base = declarative_base()
 
 engine = create_engine(
     f"mysql+mysqlconnector://{MYSQL_USER}:{MYSQL_PASS}@{MYSQL_HOST}/{MYSQL_DB}",
-    echo=True
+    echo=False
 )
 
 TIMEZONE = "Asia/Ho_Chi_Minh"

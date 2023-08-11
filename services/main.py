@@ -27,5 +27,4 @@ api.add_namespace(profile_ns)
 app.register_blueprint(blueprint)
 
 if __name__ == "__main__":
-    print(datetime.datetime.now())
     app.run(host=FLASK_HOST, port=FLASK_PORT, debug=False)
