@@ -5,6 +5,7 @@ from flask_restx import Api
 from database import engine, Base
 from configs.env import ROOT_PATH_API
 from dotenv import load_dotenv
+from flask_cors import CORS
 
 load_dotenv()
 
@@ -12,6 +13,7 @@ from configs.env import FLASK_HOST, FLASK_PORT
 from profile_controller import api as profile_ns
 
 app = Flask(__name__)
+CORS(app)
 
 Base.metadata.create_all(engine)
 
